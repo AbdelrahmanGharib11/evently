@@ -164,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 24,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: signInWithGoogle,
                       child: Container(
                         height: screendim.height * 0.08,
                         width: double.infinity,
@@ -228,6 +228,69 @@ class _LoginScreenState extends State<LoginScreen> {
       }).catchError(
         (error) => print(passwordController.text),
       );
+    }
+  }
+
+  Future<void> signInWithGoogle() async {
+    setState(() {
+      isloading = true;
+    });
+    try {
+      await GoogleSignIn().signOut();
+
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      if (googleUser == null) {
+        return;
+      }
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      if (userCredential.user != null) {
+        DocumentSnapshot<UserModel> userDoc =
+            await FireBaseServices.getUserCollection()
+                .doc(userCredential.user!.uid)
+                .get();
+
+        UserModel user;
+        if (!userDoc.exists) {
+          user = UserModel(
+            id: userCredential.user!.uid,
+            name: userCredential.user!.displayName ?? 'No Name',
+            email: userCredential.user!.email ?? 'No Email',
+            favourits: [],
+          );
+
+          await FireBaseServices.getUserCollection().doc(user.id).set(user);
+        } else {
+          // If the user exists, fetch the user data
+          user = userDoc.data()!;
+        }
+
+        // Update the user provider and navigate to the home screen
+        Provider.of<UserProvider>(context, listen: false)
+            .updateCurrentUser(user);
+        Navigator.of(context).pushReplacementNamed('home');
+      }
+    } catch (e) {
+      print("Error during Google Sign-In: $e");
+      // Optionally, show an error message to the user
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to sign in with Google: $e')),
+      );
+    } finally {
+      setState(() {
+        isloading = false;
+      });
     }
   }
 }
