@@ -8,6 +8,8 @@ class Event {
   String describtion;
   Categoryy category;
   DateTime dateTime;
+  double? lat;
+  double? long;
 
   Event({
     this.id = '',
@@ -16,7 +18,25 @@ class Event {
     required this.category,
     required this.dateTime,
     required this.userId,
+    this.lat = 0,
+    this.long = 0,
   });
+
+  void update({
+    String? title,
+    String? describtion,
+    Categoryy? category,
+    DateTime? dateTime,
+    double? lat,
+    double? long,
+  }) {
+    this.title = title ?? this.title;
+    this.describtion = describtion ?? this.describtion;
+    this.category = category ?? this.category;
+    this.dateTime = dateTime ?? this.dateTime;
+    this.lat = lat ?? this.lat;
+    this.long = long ?? this.long;
+  }
 
   Event.fromJson(Map<String, dynamic> json)
       : this(
@@ -27,6 +47,8 @@ class Event {
           category: Categoryy.categories
               .firstWhere((Category) => Category.id == json['category']),
           dateTime: (json['date'] as Timestamp).toDate(),
+          lat: json['lat'] ?? 0,
+          long: json['long'] ?? 0,
         );
 
   Map<String, dynamic> toJson() => {
@@ -36,5 +58,7 @@ class Event {
         'description': describtion,
         'category': category.id,
         'date': Timestamp.fromDate(dateTime),
+        'lat': lat,
+        'long': long,
       };
 }

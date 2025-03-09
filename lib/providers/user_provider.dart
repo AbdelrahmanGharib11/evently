@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 class UserProvider with ChangeNotifier {
   UserModel? currnetUser;
-  // List<Event> events = [];
 
   void updateCurrentUser(UserModel? user) {
     currnetUser = user;

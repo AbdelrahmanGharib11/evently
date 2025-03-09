@@ -2,6 +2,7 @@ import 'package:evently_app/models/category.dart';
 import 'package:evently_app/models/eventmodel.dart';
 import 'package:evently_app/pages/home/tabItem.dart';
 import 'package:evently_app/providers/event_provider.dart';
+import 'package:evently_app/providers/map_provider.dart';
 import 'package:evently_app/providers/user_provider.dart';
 import 'package:evently_app/services/firebaseServices.dart';
 import 'package:evently_app/theme/apptheme.dart';
@@ -9,6 +10,9 @@ import 'package:evently_app/widgets/custombutton.dart';
 import 'package:evently_app/widgets/customtextfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:geocode/geocode.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +24,9 @@ class CreateEvent extends StatefulWidget {
 }
 
 class _CreateEventState extends State<CreateEvent> {
+  LatLng? selectedLocation;
+  String? eventAddress;
+
   int currrentindex = 0;
   Categoryy selectedCategory = Categoryy.categories.first;
   TextEditingController titleController = TextEditingController();
@@ -28,13 +35,37 @@ class _CreateEventState extends State<CreateEvent> {
   TimeOfDay? selectedTime;
   DateFormat selectedDateFormat = DateFormat('dd/MM/yyyy');
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  void fetchAddress() async {
+    if (selectedLocation != null) {
+      String result = await getAddressFromLatLng(
+        selectedLocation!.latitude,
+        selectedLocation!.longitude,
+      );
+
+      setState(() {
+        eventAddress = result;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    MapProvider mapProvider = Provider.of<MapProvider>(context);
     TextTheme texttheme = Theme.of(context).textTheme;
-    // ignore: unused_local_variable
     var screendim = MediaQuery.sizeOf(context);
+
+    if (mapProvider.choosedlocation != null &&
+        mapProvider.choosedlocation != selectedLocation) {
+      setState(() {
+        selectedLocation = mapProvider.choosedlocation;
+        eventAddress = null;
+      });
+      fetchAddress();
+    }
+    print("Updated selected location: $selectedLocation");
+
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: AppTheme.primary,
@@ -220,7 +251,9 @@ class _CreateEventState extends State<CreateEvent> {
                     height: 8,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed('chooselocation');
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
@@ -229,7 +262,9 @@ class _CreateEventState extends State<CreateEvent> {
                       child: Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('chooselocation');
+                            },
                             style: IconButton.styleFrom(
                               backgroundColor: AppTheme.primary,
                               shape: RoundedRectangleBorder(
@@ -243,15 +278,23 @@ class _CreateEventState extends State<CreateEvent> {
                           SizedBox(
                             width: 10,
                           ),
-                          Text(
-                            'Choose Event Location',
-                            style: texttheme.bodyLarge?.copyWith(
-                              color: AppTheme.primary,
+                          Expanded(
+                            child: Text(
+                              selectedLocation == null
+                                  ? 'Choose Event Location'
+                                  : eventAddress ?? 'checking Location',
+
+                              maxLines: 1,
+                              style: texttheme.bodyLarge?.copyWith(
+                                color: AppTheme.primary,
+                              ),
+                              // softWrap: true,
                             ),
                           ),
-                          Spacer(),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('chooselocation');
+                            },
                             icon: Icon(
                               Icons.keyboard_arrow_right_rounded,
                               color: AppTheme.primary,
@@ -282,9 +325,15 @@ class _CreateEventState extends State<CreateEvent> {
   }
 
   void createEvent() {
+    final mapProvider = Provider.of<MapProvider>(context, listen: false);
+    print(
+        " Preparing to save event with location: ${mapProvider.choosedlocation}");
+
     if (formKey.currentState!.validate() &&
         selectedDate != null &&
-        selectedTime != null) {
+        selectedTime != null &&
+        Provider.of<MapProvider>(context, listen: false).choosedlocation !=
+            null) {
       DateTime dateTime = DateTime(
         selectedDate!.year,
         selectedDate!.month,
@@ -292,6 +341,17 @@ class _CreateEventState extends State<CreateEvent> {
         selectedTime!.hour,
         selectedTime!.minute,
       );
+
+      LatLng? chosenLocation =
+          Provider.of<MapProvider>(context, listen: false).choosedlocation;
+
+      if (chosenLocation == null) {
+        Fluttertoast.showToast(msg: 'Please select a location for the event');
+        return;
+      }
+      print(
+          "Event Location: ${chosenLocation.latitude}, ${chosenLocation.longitude}");
+
       Event event = Event(
         title: titleController.text,
         userId:
@@ -299,14 +359,41 @@ class _CreateEventState extends State<CreateEvent> {
         describtion: describtionController.text,
         category: selectedCategory,
         dateTime: dateTime,
+        lat: chosenLocation.latitude == 0 ? 30.1254 : chosenLocation.latitude,
+        long: chosenLocation.longitude,
       );
+
+      print(" Sending to Firestore: ${event.toJson()}");
       FireBaseServices.addEventsToFirestore(event).then((_) {
+        print(" Event successfully saved in Firestore");
         Provider.of<EventsProvider>(context, listen: false)
             .getEventsToCategory();
         Navigator.of(context).pop();
       }).catchError(
-        (_) => print('faild to create event'),
+        (error) {
+          print(" Failed to save event: $error");
+        },
       );
+    } else {
+      Fluttertoast.showToast(
+        msg: 'the Event location is required',
+        backgroundColor: AppTheme.white,
+        textColor: AppTheme.primary,
+        fontSize: 20,
+      );
+    }
+  }
+
+  Future<String> getAddressFromLatLng(double latitude, double longitude) async {
+    try {
+      GeoCode geoCode = GeoCode();
+
+      Address address = await geoCode.reverseGeocoding(
+          latitude: latitude, longitude: longitude);
+
+      return " ${address.city ?? 'unknown'}, ${address.region ?? 'unknown'}, ${address.countryName ?? 'unknown'}";
+    } catch (e) {
+      return "Error retrieving address: $e";
     }
   }
 }

@@ -2,7 +2,9 @@ import 'package:evently_app/authentication/forgetpassword.dart';
 import 'package:evently_app/authentication/login.dart';
 import 'package:evently_app/authentication/rigesterscreen.dart';
 import 'package:evently_app/providers/event_provider.dart';
+import 'package:evently_app/providers/map_provider.dart';
 import 'package:evently_app/providers/user_provider.dart';
+import 'package:evently_app/screens/chooseLocationScreen.dart';
 import 'package:evently_app/screens/create_event.dart';
 import 'package:evently_app/screens/editEvent.dart';
 import 'package:evently_app/screens/event_details.dart';
@@ -24,6 +26,9 @@ void main() async {
     providers: [
       ChangeNotifierProvider(
         create: (_) => UserProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (_) => MapProvider(),
       ),
       ChangeNotifierProvider(
         create: (_) => EventsProvider(),
@@ -63,6 +68,7 @@ class Evently_App extends StatelessWidget {
         'event': (context) => CreateEvent(),
         'editevent': (context) => EditEvent(),
         'details': (context) => EventDetails(),
+        'chooselocation': (context) => ChooseLocation(),
       },
       initialRoute: 'login',
     );

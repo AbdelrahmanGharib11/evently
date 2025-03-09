@@ -19,9 +19,11 @@ class FireBaseServices {
             toFirestore: (user, _) => user.toJson(),
           );
   static Future<void> addEventsToFirestore(Event event) async {
+    print("🔥 Writing event to Firestore: ${event.toJson()}");
     CollectionReference<Event> eventsCollection = getEventCollection();
     DocumentReference<Event> doc = eventsCollection.doc();
     event.id = doc.id;
+    print("✅ Event saved successfully!");
     return doc.set(event);
   }
 
@@ -114,5 +116,25 @@ class FireBaseServices {
         )
       },
     );
+  }
+
+  static Stream<List<Event>> getEventStream() {
+    return getEventCollection().snapshots().map((snapshot) {
+      return snapshot.docs.map((doc) => doc.data()).toList();
+    });
+  }
+
+  static Future<void> updateEventInFirestore(Event event) async {
+    CollectionReference<Event> eventsCollection = getEventCollection();
+    await eventsCollection.doc(event.id).update(event.toJson());
+  }
+
+  static Future<void> deleteEventFromFirestore(String eventId) async {
+    try {
+      await getEventCollection().doc(eventId).delete();
+      print(" Event deleted successfully!");
+    } catch (e) {
+      print(" Error deleting event: $e");
+    }
   }
 }

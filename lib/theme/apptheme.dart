@@ -9,12 +9,6 @@ class AppTheme {
 
   static ThemeData lighttheme = ThemeData(
     scaffoldBackgroundColor: white,
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      elevation: 0,
-      backgroundColor: primary,
-      foregroundColor: white,
-      shape: CircleBorder(side: BorderSide(width: 5, color: white)),
-    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: primary,
       type: BottomNavigationBarType.fixed,

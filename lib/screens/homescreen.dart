@@ -2,6 +2,7 @@ import 'package:evently_app/pages/favorite/favourite.dart';
 import 'package:evently_app/pages/home/home.dart';
 import 'package:evently_app/pages/map/map.dart';
 import 'package:evently_app/pages/profile/profile.dart';
+import 'package:evently_app/theme/apptheme.dart';
 import 'package:evently_app/widgets/nav_bar_item.dart';
 import 'package:flutter/material.dart';
 
@@ -55,6 +56,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ]),
       floatingActionButton: FloatingActionButton(
+        elevation: 0,
+        backgroundColor: AppTheme.primary,
+        foregroundColor: AppTheme.white,
+        shape: CircleBorder(
+          side: BorderSide(
+            width: 5,
+            color: AppTheme.white,
+          ),
+        ),
         onPressed: () {
           Navigator.of(context).pushNamed('event');
         },

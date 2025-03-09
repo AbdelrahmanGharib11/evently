@@ -1,7 +1,5 @@
 import 'package:evently_app/models/eventmodel.dart';
-import 'package:evently_app/providers/event_provider.dart';
 import 'package:evently_app/providers/user_provider.dart';
-import 'package:evently_app/services/firebaseServices.dart';
 import 'package:evently_app/theme/apptheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -4,7 +4,7 @@ import 'package:evently_app/widgets/flutterSwitcher.dart';
 import 'package:flutter/material.dart';
 
 class GetReadyScreen extends StatefulWidget {
-  GetReadyScreen({super.key});
+  const GetReadyScreen({super.key});
 
   @override
   State<GetReadyScreen> createState() => _OnBoardingScreenState();

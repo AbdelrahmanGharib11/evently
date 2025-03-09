@@ -4,13 +4,12 @@ import 'package:evently_app/theme/apptheme.dart';
 import 'package:evently_app/widgets/custombutton.dart';
 import 'package:evently_app/widgets/customtextfield.dart';
 import 'package:evently_app/widgets/flutterSwitcher.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class RigesterScreen extends StatefulWidget {
-  RigesterScreen({super.key});
+  const RigesterScreen({super.key});
 
   @override
   State<RigesterScreen> createState() => _RigesterScreenState();

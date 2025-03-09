@@ -2,13 +2,16 @@ import 'package:evently_app/models/category.dart';
 import 'package:evently_app/models/eventmodel.dart';
 import 'package:evently_app/pages/home/tabItem.dart';
 import 'package:evently_app/providers/event_provider.dart';
-import 'package:evently_app/providers/user_provider.dart';
+import 'package:evently_app/providers/map_provider.dart';
 import 'package:evently_app/services/firebaseServices.dart';
 import 'package:evently_app/theme/apptheme.dart';
 import 'package:evently_app/widgets/custombutton.dart';
 import 'package:evently_app/widgets/customtextfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:geocode/geocode.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +23,11 @@ class EditEvent extends StatefulWidget {
 }
 
 class _EditEventState extends State<EditEvent> {
+  LatLng? selectedLocation;
   late Event event;
+  String? eventAddress;
+  String? neweventAddress;
+  bool isAddressChanged = false;
   int currrentindex = 0;
   Categoryy selectedCategory = Categoryy.categories.first;
   TextEditingController titleController = TextEditingController();
@@ -28,18 +35,65 @@ class _EditEventState extends State<EditEvent> {
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
   DateFormat selectedDateFormat = DateFormat('dd/MM/yyyy');
+
+  DateFormat selectedTimeFormat = DateFormat('h:mm a');
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      event = ModalRoute.of(context)!.settings.arguments as Event;
+      currrentindex = Categoryy.categories.indexOf(event.category);
+      selectedCategory = event.category;
+      titleController.text = event.title;
+      describtionController.text = event.describtion;
+      selectedDate = event.dateTime;
+      selectedTime = TimeOfDay.fromDateTime(event.dateTime);
+
+      fetchEventAddress(event.lat!, event.long!);
+      setState(() {});
+    });
+
+    super.initState();
+  }
+
+  void fetchEventAddress(double latitude, double longitude) async {
+    String result = await getAddressFromLatLng(latitude, longitude);
+    setState(() {
+      eventAddress = result;
+    });
+  }
+
+  void fetchAddressByEditedData() async {
+    if (selectedLocation != null) {
+      String result = await getAddressFromLatLng(
+        selectedLocation!.latitude,
+        selectedLocation!.longitude,
+      );
+
+      setState(() {
+        neweventAddress = result;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     event = ModalRoute.settingsOf(context)!.arguments as Event;
-    selectedCategory = event.category;
-    currrentindex = Categoryy.categories.indexOf(event.category);
+
     TextTheme texttheme = Theme.of(context).textTheme;
-    // ignore: unused_local_variable
+    MapProvider mapProvider = Provider.of<MapProvider>(context);
+
+    if (mapProvider.choosedlocation != null &&
+        mapProvider.choosedlocation != selectedLocation) {
+      setState(() {
+        selectedLocation = mapProvider.choosedlocation;
+        neweventAddress = null;
+      });
+      fetchAddressByEditedData();
+    }
+
     var screendim = MediaQuery.sizeOf(context);
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: AppTheme.primary,
@@ -47,7 +101,7 @@ class _EditEventState extends State<EditEvent> {
         backgroundColor: AppTheme.white,
         centerTitle: true,
         title: Text(
-          'Create Event',
+          'Edit Event',
           style: texttheme.displayMedium?.copyWith(
             color: AppTheme.primary,
           ),
@@ -86,6 +140,7 @@ class _EditEventState extends State<EditEvent> {
                     isScrollable: true,
                     onTap: (index) {
                       currrentindex = index;
+
                       selectedCategory = Categoryy.categories[currrentindex];
                       setState(() {});
                     },
@@ -108,7 +163,7 @@ class _EditEventState extends State<EditEvent> {
                     height: 16,
                   ),
                   Text(
-                    'text',
+                    'Title',
                     style: texttheme.bodyLarge,
                   ),
                   SizedBox(
@@ -116,15 +171,9 @@ class _EditEventState extends State<EditEvent> {
                   ),
                   CustomTextField(
                     imagepath: 'assets/SVG/Note_Edit.svg',
-                    hinttext: 'Event Title',
+                    hinttext: event.title,
                     controller: titleController,
                     onChanged: (value) => titleController.text = value,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Event Title cannot be empty';
-                      }
-                      return null;
-                    },
                   ),
                   SizedBox(
                     height: 16,
@@ -138,7 +187,9 @@ class _EditEventState extends State<EditEvent> {
                   ),
                   CustomTextField(
                     maxlines: 5,
-                    hinttext: 'Event Description',
+                    hinttext: event.describtion.isEmpty
+                        ? 'No description'
+                        : event.describtion,
                     controller: describtionController,
                     onChanged: (value) => describtionController.text = value,
                   ),
@@ -174,7 +225,7 @@ class _EditEventState extends State<EditEvent> {
                         },
                         child: Text(
                           selectedDate == null
-                              ? 'Choose Date'
+                              ? selectedDateFormat.format(event.dateTime)
                               : selectedDateFormat.format(selectedDate!),
                           style: texttheme.bodyLarge?.copyWith(
                             color: AppTheme.primary,
@@ -208,7 +259,7 @@ class _EditEventState extends State<EditEvent> {
                         },
                         child: Text(
                           selectedTime == null
-                              ? 'Choose Time'
+                              ? selectedTimeFormat.format(event.dateTime)
                               : selectedTime!.format(context),
                           style: texttheme.bodyLarge?.copyWith(
                             color: AppTheme.primary,
@@ -225,7 +276,10 @@ class _EditEventState extends State<EditEvent> {
                     height: 8,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed('chooselocation');
+                      isAddressChanged = true;
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
@@ -234,7 +288,10 @@ class _EditEventState extends State<EditEvent> {
                       child: Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('chooselocation');
+                              isAddressChanged = true;
+                            },
                             style: IconButton.styleFrom(
                               backgroundColor: AppTheme.primary,
                               shape: RoundedRectangleBorder(
@@ -248,15 +305,22 @@ class _EditEventState extends State<EditEvent> {
                           SizedBox(
                             width: 10,
                           ),
-                          Text(
-                            'Choose Event Location',
-                            style: texttheme.bodyLarge?.copyWith(
-                              color: AppTheme.primary,
+                          Expanded(
+                            child: Text(
+                              isAddressChanged
+                                  ? neweventAddress ?? 'Fetching address...'
+                                  : eventAddress ?? 'Fetching address...',
+                              maxLines: 3,
+                              style: texttheme.bodyLarge?.copyWith(
+                                color: AppTheme.primary,
+                              ),
                             ),
                           ),
-                          Spacer(),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('chooselocation');
+                              isAddressChanged = true;
+                            },
                             icon: Icon(
                               Icons.keyboard_arrow_right_rounded,
                               color: AppTheme.primary,
@@ -271,8 +335,8 @@ class _EditEventState extends State<EditEvent> {
                   ),
                   CustomButton(
                     screendim: screendim,
-                    text: 'Add Event',
-                    onpressed: createEvent,
+                    text: 'Update Event',
+                    onpressed: updateEvent,
                   ),
                   SizedBox(
                     height: 16,
@@ -286,7 +350,7 @@ class _EditEventState extends State<EditEvent> {
     );
   }
 
-  void createEvent() {
+  void updateEvent() {
     if (formKey.currentState!.validate() &&
         selectedDate != null &&
         selectedTime != null) {
@@ -297,21 +361,53 @@ class _EditEventState extends State<EditEvent> {
         selectedTime!.hour,
         selectedTime!.minute,
       );
-      Event event = Event(
-        title: titleController.text,
-        userId:
-            Provider.of<UserProvider>(context, listen: false).currnetUser!.id,
-        describtion: describtionController.text,
+      LatLng? chosenLocation =
+          Provider.of<MapProvider>(context, listen: false).choosedlocation;
+
+      if (chosenLocation == null) {
+        Fluttertoast.showToast(msg: 'Please select a location for the event');
+        return;
+      }
+      Event updatedEvent = Event(
+        id: event.id,
+        title:
+            titleController.text.isEmpty ? event.title : titleController.text,
+        userId: event.userId,
+        describtion: describtionController.text.isEmpty
+            ? event.describtion
+            : describtionController.text,
         category: selectedCategory,
         dateTime: dateTime,
+        lat: isAddressChanged ? chosenLocation.latitude : event.lat,
+        long: isAddressChanged ? chosenLocation.longitude : event.long,
       );
-      FireBaseServices.addEventsToFirestore(event).then((_) {
+      print(isAddressChanged);
+
+      FireBaseServices.updateEventInFirestore(updatedEvent).then((_) {
         Provider.of<EventsProvider>(context, listen: false)
             .getEventsToCategory();
-        Navigator.of(context).pop();
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          'details',
+          arguments: updatedEvent,
+          ModalRoute.withName('home'),
+        ); // Keeps '/login' in the stack)
       }).catchError(
-        (_) => print('faild to create event'),
+        (_) => print('Failed to update event'),
       );
+    }
+  }
+
+  Future<String> getAddressFromLatLng(double latitude, double longitude) async {
+    try {
+      GeoCode geoCode = GeoCode();
+
+      Address address = await geoCode.reverseGeocoding(
+          latitude: latitude, longitude: longitude);
+
+      return " ${address.region ?? 'unknown'} , ${address.countryName ?? 'unknown'}";
+    } catch (e) {
+      return "Error retrieving address: $e";
     }
   }
 }
