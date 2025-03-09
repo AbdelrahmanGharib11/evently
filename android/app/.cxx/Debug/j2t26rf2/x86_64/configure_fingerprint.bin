@@ -2,6 +2,7 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ÀÚÎÅ×2§ Õ¬–×2g
 e
 cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\additional_project_files.txt	ÀÚÎÅ×2 °¡ñŽ×2d
@@ -26,3 +27,29 @@ fD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\metadata
 YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\prefab_config.json	ÁÚÎÅ×2( ´¡ñŽ×2b
 `
 ^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\symbol_folder_index.txt	ÁÚÎÅ×2U ´¡ñŽ×2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	µºÄŽ×2§ Õ¬–×2g
+e
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\additional_project_files.txt	µºÄŽ×2 ­ºÄŽ×2d
+b
+`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\android_gradle_build.json	µºÄŽ×2œ ®ºÄŽ×2i
+g
+eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\android_gradle_build_mini.json	µºÄŽ×2ù ¯ºÄŽ×2V
+T
+RD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\build.ninja	µºÄŽ×2ªÒ ø¹ÄŽ×2Z
+X
+VD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\build.ninja.txt	µºÄŽ×2_
+]
+[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\build_file_index.txt	µºÄŽ×2G ±ºÄŽ×2`
+^
+\D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\compile_commands.json	µºÄŽ×2	d
+b
+`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\compile_commands.json.bin	µºÄŽ×2
+j
+h
+fD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\metadata_generation_command.txt	µºÄŽ×2© °ºÄŽ×2]
+[
+YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\prefab_config.json	µºÄŽ×2( °ºÄŽ×2b
+`
+^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86_64\symbol_folder_index.txt	µºÄŽ×2U ±ºÄŽ×2
+>>>>>>> 96d4928e24c719103c252fab544b6e87ecf0b737

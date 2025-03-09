@@ -2,6 +2,7 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	žÚÎÅ×2§ Õ¬–×2l
 j
 hD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\additional_project_files.txt	žÚÎÅ×2 ‡ÈðŽ×2i
@@ -26,3 +27,29 @@ kD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\met
 ^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\prefab_config.json	žÚÎÅ×2( ŒÈðŽ×2g
 e
 cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\symbol_folder_index.txt	žÚÎÅ×2Z ŒÈðŽ×2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ûÚÃŽ×2§ Õ¬–×2l
+j
+hD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\additional_project_files.txt	ûÚÃŽ×2 ñÚÃŽ×2i
+g
+eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build.json	ûÚÃŽ×2¦ óÚÃŽ×2n
+l
+jD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build_mini.json	ûÚÃŽ×2ƒ õÚÃŽ×2[
+Y
+WD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja	ûÚÃŽ×2ÃÒ ¾ÚÃŽ×2_
+]
+[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja.txt	ûÚÃŽ×2d
+b
+`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build_file_index.txt	ûÚÃŽ×2G ÷ÚÃŽ×2e
+c
+aD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json	ûÚÃŽ×2	i
+g
+eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json.bin	ûÚÃŽ×2
+o
+m
+kD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\metadata_generation_command.txt	ûÚÃŽ×2Â õÚÃŽ×2b
+`
+^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\prefab_config.json	ûÚÃŽ×2( öÚÃŽ×2g
+e
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\symbol_folder_index.txt	ûÚÃŽ×2Z öÚÃŽ×2
+>>>>>>> 96d4928e24c719103c252fab544b6e87ecf0b737

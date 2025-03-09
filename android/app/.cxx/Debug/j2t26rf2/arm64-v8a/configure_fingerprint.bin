@@ -2,6 +2,7 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ŠÚÎÅ×2§ Õ¬–×2j
 h
 fD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\additional_project_files.txt	ŠÚÎÅ×2 —šðŽ×2g
@@ -26,3 +27,29 @@ iD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\metad
 \D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\prefab_config.json	ŠÚÎÅ×2( §šðŽ×2e
 c
 aD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\symbol_folder_index.txt	ŠÚÎÅ×2X ¨šðŽ×2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ˆ ÃŽ×2§ Õ¬–×2j
+h
+fD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\additional_project_files.txt	ˆ ÃŽ×2 ØŸÃŽ×2g
+e
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\android_gradle_build.json	ˆ ÃŽ×2¢ ÜŸÃŽ×2l
+j
+hD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\android_gradle_build_mini.json	ˆ ÃŽ×2ÿ ãŸÃŽ×2Y
+W
+UD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\build.ninja	ˆ ÃŽ×2¹Ò —ŸÃŽ×2]
+[
+YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\build.ninja.txt	ˆ ÃŽ×2b
+`
+^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\build_file_index.txt	ˆ ÃŽ×2G èŸÃŽ×2c
+a
+_D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\compile_commands.json	ˆ ÃŽ×2	g
+e
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\compile_commands.json.bin	ˆ ÃŽ×2
+m
+k
+iD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\metadata_generation_command.txt	ˆ ÃŽ×2¸ æŸÃŽ×2`
+^
+\D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\prefab_config.json	ˆ ÃŽ×2( çŸÃŽ×2e
+c
+aD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\arm64-v8a\symbol_folder_index.txt	ˆ ÃŽ×2X çŸÃŽ×2
+>>>>>>> 96d4928e24c719103c252fab544b6e87ecf0b737

@@ -2,6 +2,7 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¯ÚÎÅ×2§ Õ¬–×2d
 b
 `D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\additional_project_files.txt	¯ÚÎÅ×2 €õðŽ×2a
@@ -26,3 +27,29 @@ X
 VD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\prefab_config.json	¯ÚÎÅ×2( „õðŽ×2_
 ]
 [D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\symbol_folder_index.txt	¯ÚÎÅ×2R „õðŽ×2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	­‹ÄŽ×2§ Õ¬–×2d
+b
+`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\additional_project_files.txt	­‹ÄŽ×2 £‹ÄŽ×2a
+_
+]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build.json	­‹ÄŽ×2– ¤‹ÄŽ×2f
+d
+bD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build_mini.json	­‹ÄŽ×2ó ¦‹ÄŽ×2S
+Q
+OD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja	­‹ÄŽ×2›Ò êŠÄŽ×2W
+U
+SD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja.txt	­‹ÄŽ×2\
+Z
+XD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build_file_index.txt	­‹ÄŽ×2G ¨‹ÄŽ×2]
+[
+YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json	­‹ÄŽ×2	a
+_
+]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json.bin	­‹ÄŽ×2
+g
+e
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\metadata_generation_command.txt	­‹ÄŽ×2š §‹ÄŽ×2Z
+X
+VD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\prefab_config.json	­‹ÄŽ×2( §‹ÄŽ×2_
+]
+[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\symbol_folder_index.txt	­‹ÄŽ×2R §‹ÄŽ×2
+>>>>>>> 96d4928e24c719103c252fab544b6e87ecf0b737

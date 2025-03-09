@@ -6,8 +6,7 @@ import 'package:evently_app/providers/map_provider.dart';
 import 'package:evently_app/providers/user_provider.dart';
 import 'package:evently_app/screens/chooseLocationScreen.dart';
 import 'package:evently_app/screens/create_event.dart';
-import 'package:evently_app/screens/editEvent.dart';
-import 'package:evently_app/screens/event_details.dart';
+
 import 'package:evently_app/screens/getready.dart';
 import 'package:evently_app/screens/homescreen.dart';
 import 'package:evently_app/screens/onBoarding.dart';
@@ -38,6 +37,7 @@ void main() async {
   ));
 }
 
+// ignore: camel_case_types
 class Evently_App extends StatelessWidget {
   const Evently_App({super.key});
   @override
