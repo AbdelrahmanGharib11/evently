@@ -2,54 +2,27 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
-<<<<<<< HEAD
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¯ÚÎÅ×2§ Õ¬–×2d
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ºöøÈ×2§ Õ¬–×2d
 b
-`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\additional_project_files.txt	¯ÚÎÅ×2 €õğ×2a
+`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\additional_project_files.txt	ºöøÈ×2 ²öøÈ×2a
 _
-]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build.json	¯ÚÎÅ×2– õğ×2f
+]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build.json	ºöøÈ×2– ³öøÈ×2f
 d
-bD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build_mini.json	¯ÚÎÅ×2ó ƒõğ×2S
+bD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build_mini.json	ºöøÈ×2ó ´öøÈ×2S
 Q
-OD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja	¯ÚÎÅ×2›Ò Ïôğ×2W
+OD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja	ºöøÈ×2›Ò öõøÈ×2W
 U
-SD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja.txt	¯ÚÎÅ×2\
+SD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja.txt	ºöøÈ×2\
 Z
-XD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build_file_index.txt	¯ÚÎÅ×2G …õğ×2]
+XD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build_file_index.txt	ºöøÈ×2G ¶öøÈ×2]
 [
-YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json	¯ÚÎÅ×2	a
+YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json	ºöøÈ×2	a
 _
-]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json.bin	¯ÚÎÅ×2
+]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json.bin	ºöøÈ×2
 g
 e
-cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\metadata_generation_command.txt	¯ÚÎÅ×2š ƒõğ×2Z
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\metadata_generation_command.txt	ºöøÈ×2š µöøÈ×2Z
 X
-VD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\prefab_config.json	¯ÚÎÅ×2( „õğ×2_
+VD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\prefab_config.json	ºöøÈ×2( µöøÈ×2_
 ]
-[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\symbol_folder_index.txt	¯ÚÎÅ×2R „õğ×2
-=======
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	­‹Ä×2§ Õ¬–×2d
-b
-`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\additional_project_files.txt	­‹Ä×2 £‹Ä×2a
-_
-]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build.json	­‹Ä×2– ¤‹Ä×2f
-d
-bD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\android_gradle_build_mini.json	­‹Ä×2ó ¦‹Ä×2S
-Q
-OD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja	­‹Ä×2›Ò êŠÄ×2W
-U
-SD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build.ninja.txt	­‹Ä×2\
-Z
-XD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\build_file_index.txt	­‹Ä×2G ¨‹Ä×2]
-[
-YD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json	­‹Ä×2	a
-_
-]D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\compile_commands.json.bin	­‹Ä×2
-g
-e
-cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\metadata_generation_command.txt	­‹Ä×2š §‹Ä×2Z
-X
-VD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\prefab_config.json	­‹Ä×2( §‹Ä×2_
-]
-[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\symbol_folder_index.txt	­‹Ä×2R §‹Ä×2
->>>>>>> 96d4928e24c719103c252fab544b6e87ecf0b737
+[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\x86\symbol_folder_index.txt	ºöøÈ×2R ¶öøÈ×2

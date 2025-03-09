@@ -6,6 +6,8 @@ import 'package:evently_app/providers/map_provider.dart';
 import 'package:evently_app/providers/user_provider.dart';
 import 'package:evently_app/screens/chooseLocationScreen.dart';
 import 'package:evently_app/screens/create_event.dart';
+import 'package:evently_app/screens/editEvent.dart';
+import 'package:evently_app/screens/event_details.dart';
 
 import 'package:evently_app/screens/getready.dart';
 import 'package:evently_app/screens/homescreen.dart';

@@ -2,54 +2,27 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
-<<<<<<< HEAD
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ÚÎÅ×2§ Õ¬–×2l
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	êÊøÈ×2§ Õ¬–×2l
 j
-hD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\additional_project_files.txt	ÚÎÅ×2 ‡Èğ×2i
+hD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\additional_project_files.txt	êÊøÈ×2 ÑÊøÈ×2i
 g
-eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build.json	ÚÎÅ×2¦ ‰Èğ×2n
+eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build.json	êÊøÈ×2¦ âÊøÈ×2n
 l
-jD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build_mini.json	ÚÎÅ×2ƒ ‹Èğ×2[
+jD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build_mini.json	êÊøÈ×2ƒ äÊøÈ×2[
 Y
-WD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja	ÚÎÅ×2ÃÒ ÖÇğ×2_
+WD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja	êÊøÈ×2ÃÒ òÉøÈ×2_
 ]
-[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja.txt	ÚÎÅ×2d
+[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja.txt	êÊøÈ×2d
 b
-`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build_file_index.txt	ÚÎÅ×2G Èğ×2e
+`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build_file_index.txt	êÊøÈ×2G æÊøÈ×2e
 c
-aD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json	ÚÎÅ×2	i
+aD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json	êÊøÈ×2	i
 g
-eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json.bin	ÚÎÅ×2
+eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json.bin	êÊøÈ×2
 o
 m
-kD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\metadata_generation_command.txt	ÚÎÅ×2Â ‹Èğ×2b
+kD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\metadata_generation_command.txt	êÊøÈ×2Â åÊøÈ×2b
 `
-^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\prefab_config.json	ÚÎÅ×2( ŒÈğ×2g
+^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\prefab_config.json	êÊøÈ×2( åÊøÈ×2g
 e
-cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\symbol_folder_index.txt	ÚÎÅ×2Z ŒÈğ×2
-=======
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ûÚÃ×2§ Õ¬–×2l
-j
-hD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\additional_project_files.txt	ûÚÃ×2 ñÚÃ×2i
-g
-eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build.json	ûÚÃ×2¦ óÚÃ×2n
-l
-jD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\android_gradle_build_mini.json	ûÚÃ×2ƒ õÚÃ×2[
-Y
-WD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja	ûÚÃ×2ÃÒ ¾ÚÃ×2_
-]
-[D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build.ninja.txt	ûÚÃ×2d
-b
-`D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\build_file_index.txt	ûÚÃ×2G ÷ÚÃ×2e
-c
-aD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json	ûÚÃ×2	i
-g
-eD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\compile_commands.json.bin	ûÚÃ×2
-o
-m
-kD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\metadata_generation_command.txt	ûÚÃ×2Â õÚÃ×2b
-`
-^D:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\prefab_config.json	ûÚÃ×2( öÚÃ×2g
-e
-cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\symbol_folder_index.txt	ûÚÃ×2Z öÚÃ×2
->>>>>>> 96d4928e24c719103c252fab544b6e87ecf0b737
+cD:\flutter_projects\evently_app\android\app\.cxx\Debug\j2t26rf2\armeabi-v7a\symbol_folder_index.txt	êÊøÈ×2Z æÊøÈ×2
